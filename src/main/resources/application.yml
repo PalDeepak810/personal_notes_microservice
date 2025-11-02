@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: NotesSphere
+  data:
+    mongodb:
+      uri: mongodb+srv://dp220001:PZwk9zWU8DaXr2EE@notesspherecluster.vydj2r4.mongodb.net/NotesSphere?retryWrites=true&w=majority&ssl=true
+      database: NotesSphere
+      auto-index-creation: true
+
+server:
+  port: 9091

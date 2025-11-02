@@ -2,57 +2,45 @@ package com.Dp.NotesSphere.Modals;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Document(collection = "Note")
 public class Note {
+
     @Id
-    private String id;
+    private int id;
     private String title;
     private String content;
 
+    public Note() {
+    }
 
-    public void setId(String id) {
+    public Note(int id, String title, String content) {
         this.id = id;
-    }
-
-    public void setTitle(String title) {
         this.title = title;
-    }
-
-    public void setContent(String content) {
         this.content = content;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getContent() {
         return content;
     }
 
-    public Note(String id, String title, String content) {
-        this.id = id;
-        this.title = title;
+    public void setContent(String content) {
         this.content = content;
-    }
-
-    public Note() {
-
-    }
-
-    @Override
-    public String toString() {
-        return "Note{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
     }
 }
