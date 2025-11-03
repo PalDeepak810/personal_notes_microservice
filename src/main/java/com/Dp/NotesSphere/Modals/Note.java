@@ -2,45 +2,55 @@ package com.Dp.NotesSphere.Modals;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.time.LocalDateTime;
 
 @Document(collection = "Note")
 public class Note {
 
     @Id
-    private int id;
+    private String id;
     private String title;
     private String content;
 
-    public Note() {
-    }
+    private String username;
 
-    public Note(int id, String title, String content) {
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+
+    public Note() {}
+
+    public Note(String id, String title, String content, String username) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.username = username;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
 
-    public String getContent() {
-        return content;
-    }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 
-    public void setContent(String content) {
-        this.content = content;
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", username='" + username + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
     }
 }
