@@ -1,5 +1,6 @@
 package com.Dp.NotesSphere.Modals;
 
+import com.Dp.NotesSphere.Enum.TaskStatus;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,20 +14,26 @@ public class Task {
     private String title;
     private String description;
     private LocalDateTime dueDate;
-    private boolean completed = false;
-    private boolean reminderSet = false;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    private String userId;
+
+    private TaskStatus taskStatus;
 
     public Task() {
     }
 
-    public Task(String id, String username, String title, String description, LocalDateTime dueDate, boolean completed, boolean reminderSet) {
+    public Task(String id, String username, String title, String description, LocalDateTime dueDate, boolean completed, boolean reminderSet,LocalDateTime createdAt,LocalDateTime updatedAt,String userId) {
         this.id = id;
         this.username = username;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
-        this.completed = completed;
-        this.reminderSet = reminderSet;
+        this.createdAt=createdAt;
+        this.updatedAt=updatedAt;
+        this.userId=userId;
     }
 
     public String getId() {
@@ -69,19 +76,35 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public boolean isReminderSet() {
-        return reminderSet;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setReminderSet(boolean reminderSet) {
-        this.reminderSet = reminderSet;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(TaskStatus taskStatus) {
+        this.taskStatus = taskStatus;
     }
 }

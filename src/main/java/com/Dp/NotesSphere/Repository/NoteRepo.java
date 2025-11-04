@@ -1,6 +1,7 @@
 package com.Dp.NotesSphere.Repository;
 
 import com.Dp.NotesSphere.Modals.Note;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
