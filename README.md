@@ -25,10 +25,3 @@ It handles personal user data such as notes,tasks,reminders allowing individuals
 - **MongoDB Atlas** (cloud database)
 - **Connected via Spring Cloud Gateway**
 
----
-##  Project Setup
-
-### 1️ Clone the repository
-```bash
-git clone https://github.com/PalDeepak810/personal_notes_microservice.git
-cd personal_notes_microservice
