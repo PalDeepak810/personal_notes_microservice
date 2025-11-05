@@ -17,7 +17,7 @@ It handles personal user data such as notes,tasks,reminders allowing individuals
 ## Tech Stack
 
 - **Java 17**
-- **Spring Boot 3+ (WebFlux)**
+- **Spring Boot 3+ 
 - **Spring Data MongoDB**
 - **Spring Security (JWT planned)**
 - **Maven**
